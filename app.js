@@ -1,3 +1,12 @@
+let start = document.querySelector('.start');
+
+start.addEventListener('click', () => {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+    start.classList.add('invisible');
+    init();
+});
 let container, camera, renderer, scene, object, light, validSides, validBoxes, boxes,
     loader, unselectedSides, selectedSides, users, user, currentPlayer, box1, box2, target,
     cursorMesh;
@@ -348,4 +357,4 @@ function init() {
 };
 
 
-init();
+//init();

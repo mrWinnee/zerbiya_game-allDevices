@@ -21,6 +21,43 @@ canvas {
     width: 100%;
 }
 
+.start {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./textures/bgwall.jpg);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.start.invisible {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-image: none;
+    z-index: -1;
+}
+
+.start button {
+    width: 60%;
+    height: 80px;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    background-color: rgb(41, 41, 41);
+    border: none;
+    box-shadow: 0 10px 0 rgb(10, 10, 10);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start button:active {
+    box-shadow: 0 0px 0 rgb(10, 10, 10);
+    transform: translate(-50%, calc(-50% + 10px));
+}
+
 .players {
     position: absolute;
     margin: 10px;
