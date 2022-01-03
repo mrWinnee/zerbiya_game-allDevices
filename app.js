@@ -225,7 +225,7 @@ function init() {
             scene.position.z = 0;
             target.x = cursorMesh.position.x;
             target.z = cursorMesh.position.z;
-            target.zoom = 20;
+            target.zoom = 15;
             e.target.classList.replace('zoomIn', 'zoomOut');
         } else if (e.target.className.includes('zoomOut')) {
             scene.position.z = -2;
