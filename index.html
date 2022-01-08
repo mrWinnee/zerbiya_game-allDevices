@@ -5,62 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./start.css">
+    <title>Zerbiya Game</title>
 </head>
 
 <body>
-    <div class="container"></div>
-    <div class="start">
-        <button>start game</button>
-    </div>
-    <div class="players">
-        <div class="player red">
-            <div class="name">player 1</div>
-            <div class="points">0</div>
-            <div class="time">
-                <div class="line"></div>
-            </div>
+    <form action="game.html">
+        <div class="start">
+            <button type="submit">start game</button>
         </div>
-        <div class="player blue">
-            <div class="name">player 2</div>
-            <div class="points">0</div>
-            <div class="time">
-                <div class="line"></div>
-            </div>
-        </div>
-    </div>
-    <div class="winner">
-        <div class="winPlayer"></div>
-        <div class="score"></div>
-    </div>
-
-    <div class="controls">
-
-        <div class="up selector">
-            <div class="box"></div>
-        </div>
-
-        <div class="right selector">
-            <div class="box"></div>
-        </div>
-
-        <div class="left selector">
-            <div class="box"></div>
-        </div>
-
-        <div class="down selector">
-            <div class="box"></div>
-        </div>
-
-        <div class="zoomIn viewer"></div>
-
-    </div>
-
-
-    <script src="./js/three.min.js"></script>
-    <script src="./js/GLTFLoader.js"></script>
-    <script src="./app.js"></script>
+    </form>
 </body>
 
 </html>

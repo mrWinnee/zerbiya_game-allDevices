@@ -1,12 +1,3 @@
-let start = document.querySelector('.start');
-
-start.addEventListener('click', () => {
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-    }
-    start.classList.add('invisible');
-    init();
-});
 let container, camera, renderer, scene, object, light, validSides, validBoxes, boxes,
     loader, unselectedSides, selectedSides, users, user, currentPlayer, box1, box2, target,
     cursorMesh;
@@ -24,15 +15,26 @@ let up = controlsChildren[0],
     down = controlsChildren[3];
 let viewer = document.querySelector('.viewer');
 
+container = document.querySelector('.container');
+
 target = {
     x: 0,
     y: 0,
     z: 0,
     zoom: 45
 };
+/*
+
+https://usefulangle.com/post/12/javascript-going-fullscreen-is-rare#:~:text=Full-screen%20can%20be%20activated%20for%20the%20whole%20browser,exit%20full-screen%20mode%20programmatically%20using%20Javascript%20Fullscreen%20API.
+
+container.addEventListener('load', () => {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+});
+*/
 
 function init() {
-    container = document.querySelector('.container');
 
     scene = new THREE.Scene();
     scene.position.z = -2;
@@ -355,3 +357,4 @@ function init() {
 
     window.addEventListener('mousemove', onMouseMove, false);
 };
+init();
