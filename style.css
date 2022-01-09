@@ -6,6 +6,7 @@
 
 body {
     position: relative;
+    -webkit-position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -16,6 +17,7 @@ body {
 .container,
 canvas {
     position: absolute;
+    -webkit-position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
@@ -23,6 +25,7 @@ canvas {
 
 .players {
     position: absolute;
+    -webkit-position: absolute;
     margin: 10px;
     width: calc(100% - 20px);
     height: 80px;
@@ -35,6 +38,7 @@ canvas {
 
 .player {
     position: relative;
+    -webkit-position: relative;
     width: 110px;
     height: 100%;
     border: 1px solid white;
@@ -46,6 +50,7 @@ canvas {
 
 .time {
     position: absolute;
+    -webkit-position: absolute;
     bottom: 5px;
     width: 90%;
     height: 10px;
@@ -73,6 +78,7 @@ canvas {
     width: 90%;
     height: 300px;
     position: absolute;
+    -webkit-position: absolute;
     color: white;
     border: 2px solid white;
     z-index: 100;
@@ -109,6 +115,7 @@ canvas {
 
 .controls {
     position: absolute;
+    -webkit-position: absolute;
     bottom: 10px;
     left: 50%;
     height: 140px;
@@ -119,6 +126,7 @@ canvas {
 
 .up {
     position: absolute;
+    -webkit-position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -129,6 +137,7 @@ canvas {
 
 .up .box {
     position: absolute;
+    -webkit-position: absolute;
     bottom: -50%;
     width: 40px;
     height: 40px;
@@ -137,6 +146,7 @@ canvas {
 
 .down {
     position: absolute;
+    -webkit-position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -147,6 +157,7 @@ canvas {
 
 .down .box {
     position: absolute;
+    -webkit-position: absolute;
     top: -50%;
     width: 40px;
     height: 40px;
@@ -155,6 +166,7 @@ canvas {
 
 .left {
     position: absolute;
+    -webkit-position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
@@ -165,6 +177,7 @@ canvas {
 
 .left .box {
     position: absolute;
+    -webkit-position: absolute;
     right: -50%;
     width: 40px;
     height: 40px;
@@ -173,6 +186,7 @@ canvas {
 
 .right {
     position: absolute;
+    -webkit-position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
@@ -183,6 +197,7 @@ canvas {
 
 .right .box {
     position: absolute;
+    -webkit-position: absolute;
     left: -50%;
     width: 40px;
     height: 40px;
@@ -223,6 +238,7 @@ canvas {
 
 .viewer {
     position: absolute;
+    -webkit-position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
