@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <div id="loader">
+        <div id="img">
+            <img src="./textures/loader.gif" alt="" srcset="">
+        </div>
+    </div>
     <div class="container"></div>
     <div class="players">
         <div class="player red">
@@ -54,7 +59,12 @@
 
     </div>
 
-
+    <script>
+        let loading = document.getElementById('loader');
+        window.addEventListener('load', () => {
+            loading.style.display = "none";
+        });
+    </script>
     <script src="./js/three.min.js"></script>
     <script src="./js/GLTFLoader.js"></script>
     <script src="./app.js"></script>

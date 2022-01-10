@@ -14,11 +14,38 @@ body {
     background-image: url(./textures/bgwall.jpg);
 }
 
+#loader {
+    background: #000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+#loader #img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+#loader #img img {
+    position: absolute;
+    width: 150%;
+    height: 110%;
+    top: -5%;
+    left: -25%;
+}
+
 .container,
 canvas {
     position: absolute;
     -webkit-position: absolute;
     top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
 }
@@ -26,8 +53,10 @@ canvas {
 .players {
     position: absolute;
     -webkit-position: absolute;
-    margin: 10px;
-    width: calc(100% - 20px);
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 450px;
     height: 80px;
     color: white;
     display: flex;
@@ -76,6 +105,7 @@ canvas {
 
 .winner.active {
     width: 90%;
+    max-width: 450px;
     height: 300px;
     position: absolute;
     -webkit-position: absolute;

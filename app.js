@@ -1,6 +1,20 @@
+let bgSound = new Audio('./sounds/bgMusic.mp3');
+bgSound.loop = true;
+bgSound.volume = 0.05;
+bgSound.play();
+
 let container, camera, renderer, scene, object, light, validSides, validBoxes, boxes,
     loader, unselectedSides, selectedSides, users, user, currentPlayer, box1, box2, target,
     cursorMesh;
+let sideClickSound = new Audio('./sounds/gettingSide.wav'),
+    fullBoxSound = new Audio('./sounds/gettingFullBox.mp3'),
+    zoomSound = new Audio('./sounds/zoom.mp3'),
+    winningSound = new Audio(),
+    SoundeffectsVolume = .1;
+
+sideClickSound.volume = SoundeffectsVolume;
+fullBoxSound.volume = SoundeffectsVolume;
+winningSound.volume = SoundeffectsVolume;
 
 let players = document.querySelectorAll('.players .player');
 let winner = document.querySelector('.winner'),
@@ -35,7 +49,6 @@ container.addEventListener('load', () => {
 */
 
 function init() {
-
     scene = new THREE.Scene();
     scene.position.z = -2;
 
@@ -237,12 +250,14 @@ function init() {
             target.x = cursorMesh.position.x;
             target.z = cursorMesh.position.z;
             target.zoom = 15;
+            zoomSound.play();
             e.target.classList.replace('zoomIn', 'zoomOut');
         } else if (e.target.className.includes('zoomOut')) {
             scene.position.z = -2;
             target.x = 0;
             target.z = 0;
             target.zoom = 45;
+            zoomSound.play();
             e.target.classList.replace('zoomOut', 'zoomIn');
         }
     });
@@ -264,6 +279,7 @@ function init() {
                 zStable = intersects[0].object.position.z == cursorMesh.position.z;
             if (((xPositive || xNegative) && zStable) || ((zPositive || zNegative) && xStable)) {
                 intersects[0].object.material.color.set(currentPlayer.color);
+                sideClickSound.play();
 
                 for (let i = 0; i < controlsChildren.length; i++) {
                     if (controlsChildren[i].className.includes(users[0].name)) {
@@ -295,6 +311,7 @@ function init() {
                     if (boxes[x].name == box1) {
                         boxes[x].sides += 1;
                         if (boxes[x].sides == 4) {
+                            fullBoxSound.play();
                             boxes[x].full = true;
                             if (user == 0) {
                                 ex(boxes[x].posx, boxes[x].posz, currentPlayer.color)
@@ -308,6 +325,7 @@ function init() {
                     } else if (boxes[x].name == box2) {
                         boxes[x].sides += 1;
                         if (boxes[x].sides == 4) {
+                            fullBoxSound.play();
                             boxes[x].full = true;
                             if (user == 0) {
                                 ex(boxes[x].posx, boxes[x].posz, currentPlayer.color)

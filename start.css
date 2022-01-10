@@ -15,6 +15,7 @@
 
 .start button {
     width: 60%;
+    max-width: 450px;
     height: 80px;
     font-size: 25px;
     font-weight: bold;
