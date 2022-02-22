@@ -10,7 +10,8 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    font-family: sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
     background-image: url(./textures/bgwall.jpg);
 }
 
@@ -20,24 +21,9 @@ body {
     width: 100%;
     position: fixed;
     z-index: 100;
-}
-
-#loader #img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-}
-
-#loader #img img {
-    position: absolute;
-    width: 150%;
-    height: 110%;
-    top: -5%;
-    left: -25%;
+    color: white;
+    display: grid;
+    place-items: center;
 }
 
 .container,
@@ -56,12 +42,12 @@ canvas {
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 450px;
+    width: 90%;
+    max-width: 500px;
     height: 80px;
     color: white;
     display: flex;
     justify-content: space-between;
-    font-weight: bold;
     font-size: 20px;
 }
 
@@ -75,6 +61,14 @@ canvas {
     line-height: 30px;
     background-color: rgba(0, 0, 0, .7);
     border-radius: 10px;
+}
+
+.fullScreen {
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    background: white;
+    border-radius: 8px;
 }
 
 .time {

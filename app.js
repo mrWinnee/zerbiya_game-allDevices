@@ -37,16 +37,14 @@ target = {
     z: 0,
     zoom: 45
 };
-/*
 
-https://usefulangle.com/post/12/javascript-going-fullscreen-is-rare#:~:text=Full-screen%20can%20be%20activated%20for%20the%20whole%20browser,exit%20full-screen%20mode%20programmatically%20using%20Javascript%20Fullscreen%20API.
-
-container.addEventListener('load', () => {
+let fullScreen = document.querySelector('.fullScreen');
+fullScreen.addEventListener('click', () => {
     if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
     }
 });
-*/
+
 
 function init() {
     scene = new THREE.Scene();
@@ -163,7 +161,7 @@ function init() {
 
     const textureLoader = new THREE.TextureLoader();
     const baseColor = textureLoader.load("./textures/edge.jpg");
-    const normalMap = textureLoader.load("./textures/edgenormal.jpg");
+    /* const normalMap = textureLoader.load("./textures/edgenormal.jpg"); */
 
     let selectEdges = () => {
         for (let i = unselectedSides.length - 1; i >= 0; i--) {
@@ -177,7 +175,7 @@ function init() {
 
                 selectedSides.push(unselectedSides[i]);
                 validSides[i].material.map = baseColor;
-                validSides[i].material.normalMap = normalMap;
+                /* validSides[i].material.normalMap = normalMap; */
                 unselectedSides.splice(i, 1);
                 let removeEdges = validSides.splice(i, 1);
             }
