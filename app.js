@@ -1,6 +1,6 @@
 let bgSound = new Audio('./sounds/bgMusic.mp3');
 bgSound.loop = true;
-bgSound.volume = 0.05;
+bgSound.volume = .1;
 bgSound.play();
 
 let container, camera, renderer, scene, object, light, validSides, validBoxes, boxes,
@@ -10,7 +10,7 @@ let sideClickSound = new Audio('./sounds/gettingSide.wav'),
     fullBoxSound = new Audio('./sounds/gettingFullBox.mp3'),
     zoomSound = new Audio('./sounds/zoom.mp3'),
     winningSound = new Audio(),
-    SoundeffectsVolume = .1;
+    SoundeffectsVolume = .3;
 
 sideClickSound.volume = SoundeffectsVolume;
 fullBoxSound.volume = SoundeffectsVolume;
@@ -38,12 +38,40 @@ target = {
     zoom: 45
 };
 
+
+
 let fullScreen = document.querySelector('.fullScreen');
 fullScreen.addEventListener('click', () => {
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
+
+    var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
+        (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
+        (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
+        (document.msFullscreenElement && document.msFullscreenElement !== null);
+
+    var docElm = document.documentElement;
+    if (!isInFullScreen) {
+        if (docElm.requestFullscreen) {
+            docElm.requestFullscreen();
+        } else if (docElm.mozRequestFullScreen) {
+            docElm.mozRequestFullScreen();
+        } else if (docElm.webkitRequestFullScreen) {
+            docElm.webkitRequestFullScreen();
+        } else if (docElm.msRequestFullscreen) {
+            docElm.msRequestFullscreen();
+        }
+    } else {
+        if (docElm.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
     }
 });
+
 
 
 function init() {
